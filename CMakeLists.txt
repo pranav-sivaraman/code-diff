@@ -12,6 +12,10 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
+set(CMAKE_CXX_STANDARD 20)
+
 find_package(benchmark REQUIRED)
+
+add_compile_options(-march=native -g -fno-omit-frame-pointer)
 
 add_subdirectory(benchmarks)
